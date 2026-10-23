@@ -4,8 +4,8 @@
  *            l'engagement sans depasser la capacite en heures.
  * Auteurs  : James / Mathy
  * Compilation : gcc -Wall -Wextra -std=c99 -o campagne campagne.c
- * Utilisation : ./campagne [capacite]     (6 heures par defaut)
- */
+*/
+
 
 #include <stdio.h>
 #include <stdlib.h>
