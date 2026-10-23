@@ -34,6 +34,8 @@ typedef struct {
     long nb_examinees;   /* compteur de selections examinees (Partie 5) */
 } Solution;
 
+/* Alloue le probleme et son tableau de publications */
+
 Probleme *creer_probleme(int capacite)
 {
     Probleme *p = malloc(sizeof(Probleme));
@@ -50,6 +52,9 @@ Probleme *creer_probleme(int capacite)
     return p;
 }
 
+
+/* Libere le tableau, puis la structure */
+
 void liberer_probleme(Probleme *p)
 {
     if (p != NULL) {
@@ -57,6 +62,9 @@ void liberer_probleme(Probleme *p)
         free(p);
     }
 }
+
+
+/* Ajoute une publication a la fin du tableau */
 
 void ajouter_publication(Probleme *p, const char *nom, int temps, int engagement)
 {
@@ -72,6 +80,9 @@ void ajouter_publication(Probleme *p, const char *nom, int temps, int engagement
     p->nb++;
 }
 
+
+/* Ratio = engagement / temps (conversion en double sinon division entiere) */
+
 void calculer_ratios(Probleme *p)
 {
     int i;
@@ -79,6 +90,9 @@ void calculer_ratios(Probleme *p)
         p->pubs[i].ratio = (double)p->pubs[i].engagement / p->pubs[i].temps;
     }
 }
+
+
+/* Affiche le tableau des publications */
 
 void afficher_publications(const Probleme *p)
 {
